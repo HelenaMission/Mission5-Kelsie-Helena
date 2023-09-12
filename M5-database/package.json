@@ -1,0 +1,22 @@
+{
+  "name": "m5-database",
+  "version": "1.0.0",
+  "description": "",
+  "main": "/cli/cli.js",
+  "bin": {
+    "mongocli": "./cli/cli.js"
+  },
+  "scripts": {
+    "cli": "./src/cli/cli.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^11.0.0",
+    "env": "^0.0.2",
+    "mongodb": "^6.0.0",
+    "mongoose": "^7.5.0"
+  }
+}
