@@ -1,6 +1,4 @@
 import Review from '../models/reviewModel.js';
-import path from 'path';
-import fs from 'fs';
 import { dbDisconnect } from '../db/dbDisconnect.js';
 
 const log = console.log;
