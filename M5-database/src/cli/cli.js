@@ -1,11 +1,19 @@
-import commander from 'commander';
-import { dbConnect } from '../db/dbConnect';
-import { seedCmd } from '../commands/seed';
+#! /usr/bin/env node
 
-const program = new commander.Command();
+import { Command } from 'commander';
+import { dbConnect } from '../db/dbConnect.js';
+import { seedPropertyCmd } from '../commands/seedProperty.js';
+import { seedServiceCmd } from '../commands/seedService.js';
+import { seedReviewCmd } from '../commands/seedReview.js';
+
+const program = new Command();
 
 dbConnect();
 
-program.command('seed').description('Seed database').action(seedCmd);
+program.command('seedProperty').description('Seed property database').action(seedPropertyCmd);
+
+program.command('seedService').description('Seed service database').action(seedServiceCmd);
+
+program.command('seedReview').description('Seed review database').action(seedReviewCmd);
 
 program.parseAsync(process.argv);
