@@ -1,12 +1,13 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
+import PropertyFilter from './components/PropertyFilter'
+
 
 export default function PropertyList() {
+  
   return (
     <div>
-      <div className='w-[1280px] h-[1731px] relative bg-white'>
-       
-       
-      </div>
+      <PropertyFilter />
+      
     </div>
   );
 }

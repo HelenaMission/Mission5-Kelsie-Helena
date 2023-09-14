@@ -1,0 +1,32 @@
+{
+  "name": "m5-database",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/cli/cli.js",
+  "bin": {
+    "mongocli4": "./dist/cli/cli.js"
+  },
+  "scripts": {
+    "cli": "tsnd ./src/cli/cli.ts",
+    "build": "tsc && npm run copy-assets",
+    "copy-assets": "npx cpy 'src/images/**/*' dist/images"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^11.0.0",
+    "env": "^0.0.2",
+    "mongodb": "^6.0.0",
+    "mongoose": "^7.5.0",
+    "node": "^20.6.0"
+  },
+  "devDependencies": {
+    "@types/commander": "^2.12.2",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^20.6.0",
+    "cpy-cli": "^5.0.0",
+    "typescript": "^5.2.2"
+  }
+}
