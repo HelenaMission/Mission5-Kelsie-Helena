@@ -1,8 +1,8 @@
 import express from 'express';
-import { controller } from '../controllers/controller.js';
+import { getProperties } from '../controllers/controller.js';
 
 const router = express.Router();
 
-router.get('/', controller);
+router.get('/properties', getProperties);
 
 export default router;
