@@ -1,5 +1,4 @@
-import React from "react";
-import hero from "../../../images/hero.png";
+import hero from "../../../images/homePage/hero.png";
 
 const Hero = () => {
   return (

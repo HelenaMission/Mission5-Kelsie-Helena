@@ -1,5 +1,6 @@
 import Hero from "../../../components/kelsieComponents/homePage/Hero";
 import Navbar from "../../../components/kelsieComponents/homePage/NavBar";
+import Sponsors from "../../../components/kelsieComponents/homePage/Sponsors";
 
 const HomePage = () => {
   return (
@@ -10,15 +11,8 @@ const HomePage = () => {
       {/* Hero Image  */}
       <Hero />
 
-      {/* Placeholder for Component 3 */}
-      <section className="py-12">
-        <div className="container mx-auto">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-            Component 3
-          </h2>
-          {/* Add your content for Component 3 here */}
-        </div>
-      </section>
+      {/* Sponsors Bar  */}
+      <Sponsors />
 
       {/* Placeholder for Component 4 */}
       <section className="bg-gray-100 py-12">
