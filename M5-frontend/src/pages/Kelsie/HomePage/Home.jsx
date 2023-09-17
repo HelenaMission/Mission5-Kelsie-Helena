@@ -1,7 +1,7 @@
 import Hero from "../../../components/kelsieComponents/homePage/Hero";
 import Navbar from "../../../components/kelsieComponents/homePage/NavBar";
 import Sponsors from "../../../components/kelsieComponents/homePage/Sponsors";
-// import Services from "../../../components/kelsieComponents/homePage/Services";
+import Services from "../../../components/kelsieComponents/homePage/Services";
 
 const HomePage = () => {
   return (
@@ -16,7 +16,7 @@ const HomePage = () => {
       <Sponsors />
 
       {/* Services Section  */}
-      {/* <Services /> */}
+      <Services />
 
       {/* Placeholder for Component 5 */}
       <section className="py-12">

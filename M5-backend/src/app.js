@@ -14,7 +14,6 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 dbConnect();
-
 app.use("/api", router);
 
 const port = process.env.PORT;
