@@ -5,7 +5,11 @@ export default function Baths({ onBathSelect }) {
   const [selectedBaths, setSelectedBaths] = useState([]);
 
   const handleBathClick = (bath) => {
-        setSelectedBaths(bath);
+    if (selectedBaths.includes(bath)) {
+      setSelectedBaths(selectedBaths.filter((selected) => selected !== bath));
+    } else {
+      setSelectedBaths([...selectedBaths, bath]);
+    }
   }
   
   useEffect(() => {

@@ -1,13 +1,13 @@
-import {useState, useEffect} from 'react';
-import PropertyTypes from './components/PropertyTypes.jsx';
-import Location from './components/Location.jsx';
-import Bed from './components/Bed.jsx';
-import Baths from './components/Baths.jsx';
-import Others from './components/Others.jsx';
-import Price from './components/Price.jsx';
+import {useState} from 'react';
+import PropertyTypes from '../../../components/helenaComponents/filterPage/components/PropertyTypes.jsx';
+import Location from '../../../components/helenaComponents/filterPage/components/Location.jsx';
+import Bed from '../../../components/helenaComponents/filterPage/components/Bed.jsx';
+import Baths from '../../../components/helenaComponents/filterPage/components/Baths.jsx';
+import Others from '../../../components/helenaComponents/filterPage/components/Others.jsx';
+import Price from '../../../components/helenaComponents/filterPage/components/Price.jsx';
 import axios from 'axios';
 
-export default function PropertyFilter() {
+export default function PropertyFilter({ filteredProperties }) {
   const [types, setTypes] = useState([]);
   const [bed, setBed] = useState([]);
   const [bath, setBath] = useState([]);
@@ -21,37 +21,33 @@ export default function PropertyFilter() {
       selectedTypes = ['House', 'Apartment', 'Townhouse', 'Section', 'Unit'];
     }
     setTypes(selectedTypes);
-  }
+  };
 
   const handleBedSelect = (selectedBeds) => {
-    if (selectedBeds.includes('6+')) {
-      selectedBeds = ['6'];
-    }
-    setBed(selectedBeds);
-  }
+    const updatedBeds = selectedBeds.map((bed) => bed.replace('+', ''));
+    setBed(updatedBeds);
+  };
 
   const handleBathSelect = (selectedBaths) => {
-    if (selectedBaths.includes('6+')) {
-      selectedBaths = ['6'];
-    }
-    setBath(selectedBaths);
-  }
+    const updatedBaths = selectedBaths.map((bath) => bath.replace('+', ''));
+    setBath(updatedBaths);
+  };
 
   const handleImmediate = (value) => {
     setImmediate(value);
-  }
+  };
 
   const handlePets = (value) => {
     setPet(value);
-  }
+  };
 
   const handleLocationChange = (value) => {
     setSuburb(value);
-  }
+  };
 
   const handlePriceChange = (value) => {
     setPriceRange(value);
-  }
+  };
 
   const handleReset = () => {
     setTypes([]);
@@ -61,7 +57,7 @@ export default function PropertyFilter() {
     setPet(false);
     setSuburb('');
     setPriceRange({ min: 100, max: 1000 });
-  }
+  };
 
   const handleSubmit = async () => {
     const filter = {
@@ -71,10 +67,9 @@ export default function PropertyFilter() {
       immediate,
       pet,
       suburb,
-      priceRange
+      priceRange,
     };
     console.log(filter);
-  
 
     try {
       const response = await axios.post('http://localhost:4000/api/filter', filter, {
@@ -84,21 +79,20 @@ export default function PropertyFilter() {
       });
 
       if (response.status === 200) {
-        console.log(response.data);
-        console.log('Matched data:', response.data)
+        console.log('Matched data:', response.data);
+        filteredProperties(response.data);
       } else {
         console.log('Error fetching data:', response.data);
       }
     } catch (error) {
       console.log('Error fetching data:', error);
     }
-  }
-
+  };
 
   return (
     <div>
       <PropertyTypes onTypeSelect={handleTypeSelect} />
-      <div>Selected Property Types: {types.join(', ')}</div>
+      <div>Selected Property Types: {types}</div>
 
       <Location onLocationChange={handleLocationChange} />
       <div>Selected Suburb: {suburb}</div>

@@ -5,8 +5,12 @@ export default function Bed({ onBedSelect }) {
   const [selectedBeds, setSelectedBeds] = useState([]);
 
   const handleBedClick = (bed) => {
-      setSelectedBeds(bed)
-      }
+    if (selectedBeds.includes(bed)) {
+      setSelectedBeds(selectedBeds.filter((selected) => selected !== bed)); 
+    } else {
+      setSelectedBeds([...selectedBeds, bed]);
+    } 
+  }
 
     useEffect(() => {
       onBedSelect(selectedBeds);

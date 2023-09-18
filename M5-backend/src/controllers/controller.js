@@ -18,6 +18,7 @@ export const filterProperties = async (req, res) => {
   const { types, bed, bath, immediate, pet, suburb, priceRange } = req.body;
 
   try {
+    
     const filter = {
       type: types,
       bed: bed,
@@ -27,18 +28,26 @@ export const filterProperties = async (req, res) => {
       address: {
         suburb: suburb,
       },
-      price: {
-        $gt: priceRange.min,
-        $lt: priceRange.max,
-      },
+      price:priceRange,
     };
 
-    console.log('Received filter', filter);
     const matchingProperties = await findMatching(filter);
-    console.log('Matching properties', matchingProperties);
+
+    const imagesWithBase64Images = matchingProperties.map((property) => {
+      if (property.img) {
+        const base64Image = property.img.toString('base64');
+        return {
+          ...property.toObject(),
+          image: base64Image,
+        };
+        return property;
+      }
+    });
     
-    res.status(200).json(matchingProperties);
+    console.log('Matching properties', imagesWithBase64Images);
+    res.status(200).json({ property: imagesWithBase64Images });
   } catch (error) {
+    console.error('Error in filterProperties', error)
     res.status(500).json({ error: 'Error getting data' });
   }
 }
