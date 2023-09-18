@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import Arrow from "../../../images/homePage/arrow.png";
 import Carousel1 from "../../../images/homePage/carousel1.png";
 import Carousel2 from "../../../images/homePage/carousel2.png";
@@ -46,8 +47,8 @@ const Blog = () => {
         <div className="absolute left-[462px] top-0 text-center text-black text-4xl font-bold font-['Plus Jakarta Sans'] leading-loose">
           Blog
         </div>
-        Previous Slide Button
-        <ChevronLeftIcon
+        {/* Previous Slide Button */}
+        <ArrowBackIosNewIcon
           className="relative w-[60px] h-[60px] left-0 top-[250px] cursor-pointer"
           onClick={prevSlide}
         />
@@ -80,7 +81,7 @@ const Blog = () => {
             <img
               className="absolute w-[304.99px] h-[323.86px] left-0 top-0 rounded-tl-[18px] rounded-bl-[18px]"
               src={carouselImages[activePost]}
-              alt="Blog Image"
+              alt="carousel"
             />
             <div className="absolute w-[20.17px] h-[20.16px] left-[410.98px] top-[276.88px] inline-flex justify-center items-center">
               <img
@@ -90,7 +91,7 @@ const Blog = () => {
               />
             </div>
           </div>
-          <ChevronRightIcon
+          <ArrowForwardIosIcon
             className="relative left-[800px] w-[60px] h-[60px] top-[110px] cursor-pointer"
             onClick={nextSlide}
           />
