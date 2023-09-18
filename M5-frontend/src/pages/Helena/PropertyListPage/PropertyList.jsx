@@ -1,5 +1,4 @@
 import PropertyFilter from '../FilterPage/PropertyFilter';
-import NavBar from '../../../components/kelsieComponents/homePage/NavBar';
 import { useState, useEffect } from 'react';
 import bed from '../../../images/listingPage/bed.jpg';
 import bath from '../../../images/listingPage/bath.jpg';
@@ -21,7 +20,6 @@ export default function PropertyList() {
 
   return (
     <div>
-      <NavBar />
       <PropertyFilter filteredProperties={filteredProperties} />
       <div className='property-grid grid grid-cols-3 gap-9 left-[200px] top-[900px] absolute'>
         {matchedProperties.map((property, index) => (
