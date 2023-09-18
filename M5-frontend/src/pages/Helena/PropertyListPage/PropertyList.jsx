@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import PropertyFilter from './components/PropertyFilter'
+import PropertyFilter from '../FilterPage/PropertyFilter'
 
 
 export default function PropertyList() {
