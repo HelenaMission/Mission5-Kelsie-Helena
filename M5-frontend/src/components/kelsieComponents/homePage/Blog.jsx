@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/solid";
 import Arrow from "../../../images/homePage/arrow.png";
 import Carousel1 from "../../../images/homePage/carousel1.png";
 import Carousel2 from "../../../images/homePage/carousel2.png";
@@ -46,11 +46,11 @@ const Blog = () => {
         <div className="absolute left-[462px] top-0 text-center text-black text-4xl font-bold font-['Plus Jakarta Sans'] leading-loose">
           Blog
         </div>
-        {/* Previous Slide Button */}
-        {/* <ChevronLeftIcon
+        Previous Slide Button
+        <ChevronLeftIcon
           className="relative w-[60px] h-[60px] left-0 top-[250px] cursor-pointer"
           onClick={prevSlide}
-        /> */}
+        />
 
         <div className="absolute w-[305px] h-[42px] left-[406px] top-[70px]">
           <div className="absolute w-[305px] h-[42px] left-0 top-0 text-zinc-600 text-lg font-bold font-['Plus Jakarta Sans'] leading-loose">
@@ -90,10 +90,10 @@ const Blog = () => {
               />
             </div>
           </div>
-          {/* <ChevronRightIcon
+          <ChevronRightIcon
             className="relative left-[800px] w-[60px] h-[60px] top-[110px] cursor-pointer"
             onClick={nextSlide}
-          /> */}
+          />
         </div>
         <div className="absolute bottom-[10px] left-[50%] transform translate-x-[-50%] flex space-x-2">
           {blogPosts.map((_, index) => (
