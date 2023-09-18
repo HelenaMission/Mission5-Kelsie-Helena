@@ -7,7 +7,7 @@ import topReviewsLogo from "../../../images/homePage/topReviewsLogo.png";
 
 const Sponsors = () => {
   return (
-    <section className="bg-gray-200 w-1280 h-92 flex items-center justify-between px-6 py-2">
+    <section className="bg-gray-200 h-92 flex items-center justify-between px-6 py-2">
       <img src={imEnoughLogo} alt="Logo 1" className="w-1/6 p-6 h-40" />
       <img src={westpacLogo} alt="Logo 2" className="w-1/6 p-6 h-40" />
       <img src={reaLogo} alt="Logo 3" className="w-1/6 p-6 h-40" />
