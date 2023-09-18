@@ -1,6 +1,8 @@
 import { request, response } from 'express';
 import Property from '../models/propertyModel.js';
 import findMatching from '../services/service.js';
+import Service from "../models/serviceModel.js";
+
 
 // Helena's
 export const getProperties = async (req, res) => {
@@ -8,9 +10,9 @@ export const getProperties = async (req, res) => {
     const properties = await Property.find();
     res.status(200).json(properties);
   } catch (error) {
-    res.status(404).json({ error: 'Error getting data' });
+    res.status(404).json({ error: "Error getting data" });
   }
-}
+};
 
 export const filterProperties = async (req, res) => {
   const { types, bed, bath, immediate, pet, suburb, priceRange } = req.body;
@@ -42,3 +44,11 @@ export const filterProperties = async (req, res) => {
 }
 
 // Kelsie's
+export const getServices = async (req, res) => {
+  try {
+    const services = await Service.find();
+    res.status(200).json(services);
+  } catch (error) {
+    res.status(404).json({ error: "Error getting data" });
+  }
+};
