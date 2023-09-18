@@ -2,7 +2,7 @@ import StarImage from "../../../images/homePage/star.png";
 
 const Reviews = () => {
   return (
-    <div className="bg-white w-[1280px]">
+    <div className="bg-white ">
       <div className="flex flex-col items-center justify-center py-10">
         <img src={StarImage} alt="Star" className="w-20 h-auto" />
 
@@ -23,7 +23,7 @@ const Reviews = () => {
             4.5
           </div>
           <div className="text-stone-500 text-base font-bold font-['Plus Jakarta Sans'] leading-[35px] mx-4 mt-4 absolute top-0 left-0">
-            Kalista Bard
+            Bard
           </div>
           <br /> <br />
           <div className="text-stone-500 text-xs font-normal font-['Plus Jakarta Sans'] leading-[30px] mx-4 mt-4">

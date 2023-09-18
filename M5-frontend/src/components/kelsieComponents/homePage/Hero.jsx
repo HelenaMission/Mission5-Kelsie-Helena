@@ -2,7 +2,7 @@ import hero from "../../../images/homePage/hero.png";
 
 const Hero = () => {
   return (
-    <section className="relative w-1280 h-710">
+    <section className="relative h-710">
       <img src={hero} alt="Hero" className="w-full h-full object-cover" />
       <div className="absolute top-0 left-0 right-0 bottom-0 flex flex-col justify-center items-center text-center">
         <h1

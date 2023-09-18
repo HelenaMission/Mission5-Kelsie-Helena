@@ -1,3 +1,7 @@
+import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import TwitterIcon from "@mui/icons-material/Twitter";
+
 const Footer = () => {
   return (
     <div className="bg-gray-200 h-[293px] relative">
@@ -48,29 +52,26 @@ const Footer = () => {
       </div>
       <div
         className="absolute left-[1380px] top-[199px] -rotate-180 border border-slate-600 border-opacity-20 origin-top-left"
-        style={{ width: "1320px", height: "0px" }}
+        style={{ width: "100vw", height: "0px" }}
       ></div>
       <div className="absolute left-[60px] top-[-0.14px]" />
-      <div className="absolute left-[60px] top-[36px] text-zinc-900 text-xs font-normal font-['Plus Jakarta Sans'] leading-normal">
+      <div className="absolute left-[60px] top-[36px] w-[270px] text-zinc-900 text-xs font-normal font-['Plus Jakarta Sans'] leading-normal">
         Metro NZ Property Management has offices conveniently located in Central
         Auckland but operates throughout New Zealand and also internationally.
       </div>
-      <div className="absolute left-[65px] top-[149px]">
-        <div
-          className="absolute bg-gray-900 rounded-full shadow"
-          style={{ width: "33.60px", height: "33.60px" }}
+      <div className="absolute left-[65px] top-[135px]">
+        <FacebookRoundedIcon
+          style={{ width: "33.60px", height: "33.60px", color: "#000" }}
         />
       </div>
-      <div className="absolute left-[118.60px] top-[149px]">
-        <div
-          className="absolute bg-gray-900 rounded-full shadow"
-          style={{ width: "33.60px", height: "33.60px" }}
+      <div className="absolute left-[118.60px] top-[135px]">
+        <TwitterIcon
+          style={{ width: "33.60px", height: "33.60px", color: "#000" }}
         />
       </div>
-      <div className="absolute left-[172.20px] top-[149px]">
-        <div
-          className="absolute bg-gray-900 rounded-full shadow"
-          style={{ width: "33.60px", height: "33.60px" }}
+      <div className="absolute left-[172.20px] top-[135px]">
+        <InstagramIcon
+          style={{ width: "33.60px", height: "33.60px", color: "#000" }}
         />
       </div>
     </div>
