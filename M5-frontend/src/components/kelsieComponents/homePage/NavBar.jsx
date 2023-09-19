@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom"; // Import Link from React Router
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../../../images/homePage/metroLogo.png";
 
 const Navbar = () => {
@@ -9,155 +9,154 @@ const Navbar = () => {
 
   const handlePropertyManagementHover = () => {
     setPropertyManagementOpen(true);
-  };
-
-  const handlePropertyManagementLeave = () => {
-    setPropertyManagementOpen(false);
+    setPropertyOwnerOpen(false);
+    setTenantsOpen(false);
   };
 
   const handlePropertyOwnerHover = () => {
     setPropertyOwnerOpen(true);
-  };
-
-  const handlePropertyOwnerLeave = () => {
-    setPropertyOwnerOpen(false);
+    setPropertyManagementOpen(false);
+    setTenantsOpen(false);
   };
 
   const handleTenantsHover = () => {
     setTenantsOpen(true);
+    setPropertyManagementOpen(false);
+    setPropertyOwnerOpen(false);
   };
 
-  const handleTenantsLeave = () => {
+  const handleCloseDropdowns = () => {
+    setPropertyManagementOpen(false);
+    setPropertyOwnerOpen(false);
     setTenantsOpen(false);
   };
 
   return (
-    <nav className="bg-white h-16 px-6 flex items-center justify-between shadow-lg">
+    <nav className="bg-white h-16 px-6 flex items-center justify-between shadow-lg relative z-10">
       <div className="flex items-center">
         <img src={logo} alt="Logo" className="h-12" />
       </div>
-      <div className="flex space-x-8">
+      <div className="flex space-x-8 relative z-10">
         {/* Property Management Dropdown */}
         <div
           className="relative group"
           onMouseEnter={handlePropertyManagementHover}
-          onMouseLeave={handlePropertyManagementLeave}
+          onMouseLeave={handleCloseDropdowns}
         >
-          <span className="text-black hover:text-blue-500 cursor-pointer group-hover:text-blue-500">
+          <span className="text-black hover:text-blue-500 cursor-pointer group-hover:text-blue-500 px-5">
             Property Management
           </span>
           <div
-            className={`absolute ${
+            className={`menu-dropdown absolute z-20 ${
               isPropertyManagementOpen ? "block" : "hidden"
-            } mt-2 space-y-2`}
-            onMouseEnter={handlePropertyManagementHover}
-            onMouseLeave={handlePropertyManagementLeave}
+            } bg-white w-64`}
           >
             <Link
               to="/property-management/building"
-              className="text-black hover:text-blue-500 block"
+              className="menu-link block hover:bg-indigo-300 p-4"
             >
               Building Management
             </Link>
             <Link
               to="/property-management/body-corp"
-              className="text-black hover:text-blue-500 block"
+              className="menu-link block hover:bg-indigo-300 p-4"
             >
               Body Corp Management
             </Link>
             <Link
               to="/property-management/rental"
-              className="text-black hover:text-blue-500 block"
+              className="menu-link block hover:bg-indigo-300 p-4"
             >
               Rental Property Management
             </Link>
           </div>
         </div>
-
         {/* Property Owners Dropdown */}
         <div
           className="relative group"
           onMouseEnter={handlePropertyOwnerHover}
-          onMouseLeave={handlePropertyOwnerLeave}
+          onMouseLeave={handleCloseDropdowns}
         >
-          <span className="text-black hover:text-blue-500 cursor-pointer group-hover:text-blue-500">
+          <span className="text-black hover:text-blue-500 cursor-pointer group-hover:text-blue-500 px-5">
             Property Owners
           </span>
           <div
-            className={`absolute ${
+            className={`menu-dropdown absolute z-20 ${
               isPropertyOwnerOpen ? "block" : "hidden"
-            } mt-2 space-y-2`}
-            onMouseEnter={handlePropertyOwnerHover}
-            onMouseLeave={handlePropertyOwnerLeave}
+            } bg-white w-64`}
           >
             <Link
               to="/property-owners/investment"
-              className="text-black hover:text-blue-500 block"
+              className="menu-link block hover:bg-indigo-300 p-4"
             >
               Property Investment
             </Link>
             <Link
               to="/property-owners/body-corp-admin"
-              className="text-black hover:text-blue-500 block"
+              className="menu-link block hover:bg-indigo-300 p-4"
             >
               Body Corporate Admin
             </Link>
             <Link
               to="/property-owners/renovation"
-              className="text-black hover:text-blue-500 block"
+              className="menu-link block hover:bg-indigo-300 p-4"
             >
               Renovation Support
             </Link>
             <Link
               to="/property-owners/tenanted-sales"
-              className="text-black hover:text-blue-500 block"
+              className="menu-link block hover:bg-indigo-300 p-4"
             >
               Tenanted Property Sales
             </Link>
           </div>
         </div>
-
         {/* Tenants Dropdown */}
         <div
           className="relative group"
           onMouseEnter={handleTenantsHover}
-          onMouseLeave={handleTenantsLeave}
+          onMouseLeave={handleCloseDropdowns}
         >
-          <span className="text-black hover:text-blue-500 cursor-pointer group-hover:text-blue-500">
+          <span className="text-black hover:text-blue-500 cursor-pointer group-hover:text-blue-500 px-5">
             Tenants
           </span>
           <div
-            className={`absolute ${
+            className={`menu-dropdown absolute z-20 ${
               isTenantsOpen ? "block" : "hidden"
-            } mt-2 space-y-2`}
-            onMouseEnter={handleTenantsHover}
-            onMouseLeave={handleTenantsLeave}
+            } bg-white w-64`}
           >
             <Link
               to="/tenants/listings"
-              className="text-black hover:text-blue-500 block"
+              className="menu-link block hover:bg-indigo-300 p-4"
             >
               Property Listings
             </Link>
-            <a href="#" className="text-black hover:text-blue-500 block">
+            <Link
+              to="/tenants/steps-into-tenancy"
+              className="menu-link block hover:bg-indigo-300 p-4"
+            >
               Steps Into Tenancy
-            </a>
-            <a href="#" className="text-black hover:text-blue-500 block">
+            </Link>
+            <Link
+              to="/tenants/contact-property-manager"
+              className="menu-link block hover:bg-indigo-300 p-4"
+            >
               Contact Property Manager
-            </a>
-            <a href="#" className="text-black hover:text-blue-500 block">
+            </Link>
+            <Link
+              to="/tenants/disputes-process"
+              className="menu-link block hover:bg-indigo-300 p-4"
+            >
               Disputes Process
-            </a>
-          </div>
-        </div>
-
-        {/* Listings */}
+            </Link>{" "}
+          </div>{" "}
+        </div>{" "}
         <Link
           to="/listings"
-          className="text-black hover:text-blue-500 cursor-pointer"
+          className="text-black hover:text-blue-500 pl-5 pr-10"
         >
           Listings
-        </Link>
+        </Link>{" "}
       </div>
     </nav>
   );
