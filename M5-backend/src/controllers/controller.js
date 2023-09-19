@@ -8,7 +8,17 @@ import Service from "../models/serviceModel.js";
 export const getProperties = async (req, res) => {
   try {
     const properties = await Property.find();
-    res.status(200).json(properties);
+
+    const imagesWithBase64Images = properties.map((property) => {
+      if (property.img) {
+        const base64Image = property.img.toString('base64');
+        return {
+          ...property.toObject(),
+          image: base64Image,
+        };
+      }
+    });
+    res.status(200).json({ property: imagesWithBase64Images });
   } catch (error) {
     res.status(404).json({ error: "Error getting data" });
   }
@@ -40,7 +50,6 @@ export const filterProperties = async (req, res) => {
           ...property.toObject(),
           image: base64Image,
         };
-        return property;
       }
     });
     

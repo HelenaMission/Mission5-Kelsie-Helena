@@ -11,35 +11,33 @@ export default function Baths({ onBathSelect }) {
       setSelectedBaths([...selectedBaths, bath]);
     }
   }
-  
+
   useEffect(() => {
     onBathSelect(selectedBaths);
   }, [selectedBaths, onBathSelect]);
 
   return (
-    <div className='absolute left-[889px] top-[508px]'>
-      <div className="text-black text-lg font-bold font-['Plus Jakarta Sans'] leading-loose">
+    <div className='absolute left-[1119px] top-[308px]'>
+      <div className="text-black text-2xl font-bold font-['Plus Jakarta Sans'] leading-loose">
         Bathrooms
-        <div className='flex space-x-1'>
+        <div className='flex space-x'>
           {baths.map((bath) => (
-            <div className='w-[37.34px] h-9 bg-white justify-start items-start inline-flex' key={bath}>
               <div
                 key={bath}
-                className={`w-[37.34px] h-9 px-5 py-3 bg-white border justify-center items-center gap-2.5 flex
+                className={`w-12 h-12 px-5 py-3 bg-white border justify-center items-center gap-2.5 flex
                 ${selectedBaths.includes(bath) ? 'border-red-500' : 'border-stone-500'}
                 ${bath === '1' ? 'rounded-l-[10px]' : ''}
                 ${bath === '6+' ? 'rounded-r-[10px]' : ''}`}
               >
                 <button
                   onClick={() => handleBathClick(bath)}
-                  className={`text-xs font-normal font-['Plus Jakarta Sans'] leading-normal tracking-wide
+                  className={`text-base font-normal leading-normal tracking-wide
                   ${selectedBaths.includes(bath) ? 'text-red-500' : 'text-stone-500'}
                   `}
                 >
                   {bath}
                 </button>
               </div>
-            </div>
           ))}
         </div>
       </div>

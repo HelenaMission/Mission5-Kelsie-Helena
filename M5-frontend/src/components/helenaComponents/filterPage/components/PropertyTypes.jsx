@@ -20,8 +20,8 @@ export default function PropertyTypes({ onTypeSelect }) {
 
   return (
     <div>
-      <div className='absolute left-[489px] top-[308px]'>
-        <div className=" text-black text-lg font-bold font-['Plus Jakarta Sans'] leading-loose">
+      <div className='absolute left-[719px] top-[108px]'>
+        <div className=" text-black text-2xl font-bold font-['Plus Jakarta Sans'] leading-loose">
           Property types
         </div>
         <div className='mt-3'>
@@ -29,13 +29,13 @@ export default function PropertyTypes({ onTypeSelect }) {
             {buttons.map((button) => (
               <div
                 key={button}
-                className={`w-[220px] h-9 px-5 py-3 bg-white rounded-[10px] border justify-center items-center gap-2.5 flex ${
+                className={`w-[290px] h-11 px-5 py-3 bg-white rounded-[10px] border justify-center items-center gap-2.5 flex ${
                   selectedTypes.includes(button) ? 'border-red-500' : 'border-stone-500'
                 }`}
               >
                 <button
                   onClick={() => handleTypeClick(button)}
-                  className={`text-xs font-normal font-['Plus Jakarta Sans'] leading-normal tracking-wide ${
+                  className={`text-base font-normal leading-normal tracking-wide ${
                     selectedTypes.includes(button) ? ' text-red-500' : 'text-stone-500'
                   }`}
                 >

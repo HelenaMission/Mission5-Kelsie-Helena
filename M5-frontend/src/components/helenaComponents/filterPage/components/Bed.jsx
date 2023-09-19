@@ -17,15 +17,14 @@ export default function Bed({ onBedSelect }) {
     }, [selectedBeds, onBedSelect]);
 
     return (
-      <div className='absolute left-[489px] top-[508px]'>
-        <div className="text-black text-lg font-bold font-['Plus Jakarta Sans'] leading-loose">
+      <div className='absolute left-[719px] top-[308px]'>
+        <div className="text-black text-2xl font-bold font-['Plus Jakarta Sans'] leading-loose">
           Bedrooms
-          <div className='flex space-x-1'>
+          <div className='flex space-x'>
             {initialBeds.map((bed) => (
-              <div className='w-[37.34px] h-9 bg-white justify-start items-start inline-flex' key={bed}>
                 <div
                   key={bed}
-                  className={`w-[37.34px] h-9 px-5 py-3 bg-white border justify-center items-center gap-2.5 flex
+                  className={`w-12 h-12 px-5 py-3 bg-white border justify-center items-center gap-2.5 flex
                 ${selectedBeds.includes(bed) ? 'border-red-500' : 'border-stone-500'}
                 ${bed === '1' ? 'rounded-l-[10px]' : ''}
                 ${bed === '6+' ? 'rounded-r-[10px]' : ''}
@@ -33,13 +32,12 @@ export default function Bed({ onBedSelect }) {
                 >
                   <button
                     onClick={() => handleBedClick(bed)}
-                    className={`text-xs font-normal font-['Plus Jakarta Sans'] leading-normal tracking-wide
-                  ${selectedBeds.includes(bed) ? 'text-red-500' : 'text-stone-500'}`}
+                    className={`text-base font-normal font-['Plus Jakarta Sans'] leading-normal tracking-wide
+                  ${selectedBeds.includes(bed) ? 'text-red-700' : 'text-stone-700'}`}
                   >
                     {bed}
                   </button>
                 </div>
-              </div>
             ))}
           </div>
         </div>

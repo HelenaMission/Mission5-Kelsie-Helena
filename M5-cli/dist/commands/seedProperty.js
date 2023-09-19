@@ -13,6 +13,36 @@ const seedPropertyCmd = async () => {
     try {
         const seedingProperty = [
             {
+                price: 480,
+                type: 'House',
+                bed: 2,
+                bath: 1.5,
+                address: { street_number: 35, street_name: 'Morihana Close', suburb: 'Glen Eden' },
+                img: {
+                    img1: readFile('35_morihana_close_gleneden_2bd_1.5bt_$480.jpg'),
+                    img2: readFile('35_morihana_close_2_1.jpg'),
+                    img3: readFile('35_morihana_close_3_1.jpg'),
+                },
+                pet: true,
+                parking: true,
+                immediate: true,
+            },
+            {
+                price: 560,
+                type: 'Townhouse',
+                bed: 2,
+                bath: 1,
+                address: { street_number: 14, street_name: 'Omana Road', suburb: 'Milford' },
+                img: {
+                    img1: readFile('14_omana_rd_milford_2bd_1bt_$560.jpg'),
+                    img2: readFile('14_omana_rd_2_1.jpg'),
+                    img3: readFile('14_omana_rd_3_1.jpg'),
+                },
+                pet: false,
+                parking: true,
+                immediate: false,
+            },
+            {
                 price: 530,
                 type: 'Unit',
                 bed: 2,
@@ -35,21 +65,6 @@ const seedPropertyCmd = async () => {
                 immediate: true,
             },
             {
-                price: 560,
-                type: 'Townhouse',
-                bed: 2,
-                bath: 1,
-                address: { street_number: 14, street_name: 'Omana Road', suburb: 'Milford' },
-                img: {
-                    img1: readFile('14_omana_rd_milford_2bd_1bt_$560.jpg'),
-                    img2: readFile('14_omana_rd_2.jpg'),
-                    img3: readFile('14_omana_rd_3.jpg'),
-                },
-                pet: false,
-                parking: true,
-                immediate: false,
-            },
-            {
                 price: 980,
                 type: 'Townhouse',
                 bed: 3,
@@ -59,21 +74,6 @@ const seedPropertyCmd = async () => {
                 pet: false,
                 parking: true,
                 immediate: false,
-            },
-            {
-                price: 480,
-                type: 'House',
-                bed: 2,
-                bath: 1.5,
-                address: { street_number: 35, street_name: 'Morihana Close', suburb: 'Glen Eden' },
-                img: {
-                    img1: readFile('35_morihana_close_gleneden_2bd_1.5bt_$480.jpg'),
-                    img2: readFile('35_morihana_close_2.jpg'),
-                    img3: readFile('35_morihana_close_3.jpg'),
-                },
-                pet: true,
-                parking: true,
-                immediate: true,
             },
             {
                 price: 730,
