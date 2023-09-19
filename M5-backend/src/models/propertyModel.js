@@ -2,7 +2,7 @@ import mongoose, { Schema } from 'mongoose';
 
 const propertySchema = new Schema({
   price: {
-    type: 'string',
+    type: 'number',
     require: true,
   },
   type: {
