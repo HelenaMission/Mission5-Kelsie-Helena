@@ -44,16 +44,17 @@ const Blog = () => {
   return (
     <div className="bg-zinc-200 min-h-[600px] flex justify-center items-center ">
       <div className="w-[998px] h-[519px] relative mx-auto">
-        <div className="absolute left-[462px] top-0 text-center text-black text-4xl font-bold font-['Plus Jakarta Sans'] leading-loose">
+        <div className="absolute left-[462px] top-0 text-center text-black text-4xl font-bold font-['Plus Jakarta Sans'] leading-loose ">
           Blog
         </div>
-        {/* Previous Slide Button */}
+
         <ArrowBackIosNewIcon
           className="relative w-[60px] h-[60px] left-0 top-[250px] cursor-pointer"
           onClick={prevSlide}
         />
 
         <div className="absolute w-[305px] h-[42px] left-[406px] top-[70px]">
+          {" "}
           <div className="absolute w-[305px] h-[42px] left-0 top-0 text-zinc-600 text-lg font-bold font-['Plus Jakarta Sans'] leading-loose">
             See more blog posts{" "}
           </div>
@@ -61,16 +62,13 @@ const Blog = () => {
             <img className="w-[20.17px] h-[20.17px]" src={Arrow} alt="icon" />
           </div>
         </div>
-        <div className="absolute w-[125px] h-[0px] left-[441px] top-[46px] border-2 border-red-600"></div>
-        <div className="absolute w-[685px] h-[324px] left-[173px] top-[133px]">
-          <div className="absolute w-[219.69px] h-[30.24px] left-[329.17px] top-[284.40px] text-slate-500 text-2xl font-bold font-['Plus Jakarta Sans'] leading-9">
-            See more
-          </div>
+        <div className="absolute w-[125px] h-[0px] left-[441px] top-[65px] border-2 border-red-600"></div>
+        <div className="absolute w-[685px] h-[324px] left-[173px] top-[133px] mt-5">
           <div className="absolute w-[685px] h-[324px] left-0 top-0 bg-white rounded-[18px]">
-            <div className="absolute w-[337.10px] h-[92.88px] left-[327.99px] top-[52.98px] text-stone-900 text-xl font-bold font-['Plus Jakarta Sans'] leading-loose">
+            <div className="absolute w-[300px] left-[327.99px] top-[40px] text-stone-900 text-xl font-bold font-['Plus Jakarta Sans']">
               {blogPosts[activePost].title}
             </div>
-            <div className="absolute w-[320.53px] h-[123.84px] left-[327.99px] top-[128.94px] text-black text-base font-normal font-['Plus Jakarta Sans'] leading-[30px]">
+            <div className="absolute w-[320.53px] h-[123.84px] left-[327.99px] top-[150.94px] text-black text-base font-normal font-['Plus Jakarta Sans'] leading-[30px]">
               {blogPosts[activePost].content}
             </div>
             <div className="absolute w-[219.69px] h-[30.24px] left-[327.99px] top-[269.88px] text-stone-500 text-base font-normal font-['Plus Jakarta Sans'] leading-[30px]">
@@ -80,6 +78,7 @@ const Blog = () => {
             </div>
             <img
               className="absolute w-[304.99px] h-[323.86px] left-0 top-0 rounded-tl-[18px] rounded-bl-[18px]"
+              style={{ objectFit: "cover" }}
               src={carouselImages[activePost]}
               alt="carousel"
             />
