@@ -32,7 +32,7 @@
 }
 
 .input-range__label {
-  color: #aaaaaa;
+  color: 000000;
   font-family: 'Helvetica Neue', san-serif;
   font-size: 1rem;
   transform: translateZ(0);
@@ -41,7 +41,7 @@
 
 .input-range__label--min,
 .input-range__label--max {
-  color:white;
+  color:#E9EAF0;
   bottom: -2rem;
   position: absolute;
 }
@@ -68,7 +68,7 @@
 }
 
 .input-range__track {
-  background: #eeeeee;
+  background: #C4C4C4;
   border-radius: 0.3rem;
   cursor: pointer;
   display: block;

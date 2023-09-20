@@ -4,7 +4,6 @@ import Footer from '../../../components/kelsieComponents/homePage/Footer.jsx';
 import NavBar from '../../../components/kelsieComponents/homePage/NavBar.jsx';
 import PropertyCard from '../../../components/helenaComponents/listingPage/components/PropertyCard.jsx';
 import Headline from '../../../components/helenaComponents/listingPage/components/Headline';
-
 import axios from 'axios';
 
 export default function PropertyList() {
@@ -56,10 +55,6 @@ export default function PropertyList() {
     setIsButtonClicked(!isButtonClicked);
   };
 
-  const buttonClasses = `w-[220px] h-[60px] px-5 py-3 ${
-    isButtonClicked ? 'bg-slate-200 text-rose-600 ease-linear' : 'bg-red-600 text-white'
-  } rounded-tl-[20px] rounded-tr-[20px] justify-center items-center gap-2.5 inline-flex absolute top-0 left-[150px] m-3  text-base font-bold text-xl font-['Plus Jakarta Sans'] leading-normal tracking-wide`;
-
   useEffect(() => {
     console.log('matchedProperties has changed:', matchedProperties);
   }, [matchedProperties]);
@@ -83,20 +78,23 @@ export default function PropertyList() {
   }, []);
 
   return (
-    <div className='body relative'>
+    <div>
       <NavBar />
-      <Headline />
-      <div className='relative h-7'>
+      <div className='h-auto pb-36'>
+        <Headline />
         <button
           onClick={() => {
             toggleFilter();
             handleButtonClicked();
           }}
-          className={buttonClasses}
+          className={`w-[220px] h-[60px] px-5 py-3 ${
+            isButtonClicked ? 'bg-slate-200 text-rose-600 ease-linear' : 'bg-red-600 text-white'
+          } rounded-tl-[20px] rounded-tr-[20px] justify-center items-center gap-2.5 absolute left-[150px] m-3 text-base font-bold text-xl font-['Plus Jakarta Sans'] leading-normal tracking-wide`}
         >
           FILTERS
         </button>
-        <div className='filter'>
+
+        <div className={`filter-section transition-height ${isFilterVisible ? 'h-auto' : 'h-0 overflow-hidden'}`}>
           {isFilterVisible && (
             <PropertyFilter
               key={resetKey}
@@ -106,10 +104,13 @@ export default function PropertyList() {
             />
           )}
         </div>
+        <div className={`relative top-[85px] pt-12 flex justify-center ${isFilterVisible ? 'h-auto' : ''}`}>
+          <PropertyCard matchedProperties={matchedProperties} initialProperties={initialProperties} />
+          <br />
+          <br />
+        </div>
       </div>
-      <PropertyCard matchedProperties={matchedProperties} initialProperties={initialProperties} />
-
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

@@ -17,7 +17,7 @@ export default function Baths({ onBathSelect }) {
   }, [selectedBaths, onBathSelect]);
 
   return (
-    <div className='absolute left-[1119px] top-[308px]'>
+    <div className='absolute left-[1119px] top-[268px]'>
       <div className="text-black text-2xl font-bold font-['Plus Jakarta Sans'] leading-loose">
         Bathrooms
         <div className='flex space-x'>

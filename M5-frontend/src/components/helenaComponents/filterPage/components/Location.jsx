@@ -23,11 +23,9 @@ export default function Location({ onLocationChange }) {
     onLocationChange(value);
   };
   return (
-    <div>
-      <div className="absolute left-[199px] top-[108px] text-black text-2xl font-bold font-['Plus Jakarta Sans'] leading-loose">
-        Location
-      </div>
-      <div className='left-[199px] top-[168px] absolute text-black'>
+    <div className="absolute left-[199px] top-[65px] font-['Plus Jakarta Sans'] ">
+      <div className='text-black text-2xl font-bold leading-loose'>Location</div>
+      <div className='relative top-[15px] text-black'>
         <Stack spacing={2} sx={{ width: 400 }}>
           <Autocomplete
             freeSolo

@@ -20,7 +20,7 @@ export default function PropertyTypes({ onTypeSelect }) {
 
   return (
     <div>
-      <div className='absolute left-[719px] top-[108px]'>
+      <div className='absolute left-[719px] top-[65px]'>
         <div className=" text-black text-2xl font-bold font-['Plus Jakarta Sans'] leading-loose">
           Property types
         </div>
