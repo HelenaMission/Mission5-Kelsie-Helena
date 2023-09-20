@@ -24,8 +24,8 @@ export default function Location({ onLocationChange }) {
   };
   return (
     <div className="absolute left-[199px] top-[65px] font-['Plus Jakarta Sans'] ">
-      <div className='text-black text-2xl font-bold leading-loose'>Location</div>
-      <div className='relative top-[15px] text-black'>
+      <div className='text-2xl font-bold leading-loose'>Location</div>
+      <div className='relative top-[10px]'>
         <Stack spacing={2} sx={{ width: 400 }}>
           <Autocomplete
             freeSolo
@@ -47,9 +47,9 @@ export default function Location({ onLocationChange }) {
                   ...params.InputProps,
                   type: 'search',
                   className:
-                    'h-11 px-2.5 py-3 bg-white rounded-[10px] border border-stone-400 justify-start items-center gap-2.5 inline-flex',
+                    'h-12 bg-white rounded-[10px] border border-stone-500 justify-start items-center inline-flex',
                 }}
-                sx={{ '.MuiInputLabel-root': { top: '-8px' } }}
+                sx={{ '.MuiInputLabel-root': { top: '-4px' } }}
               />
             )}
           />

@@ -34,7 +34,7 @@ const Navbar = () => {
   return (
     <nav className="bg-white h-16 px-6 flex items-center justify-between shadow-lg relative z-10">
       <div className="flex items-center">
-        <img src={logo} alt="Logo" className="h-12" />
+        <img src={logo} alt="Logo" className="h-16" />
       </div>
       <div className="flex space-x-8 relative z-10">
         {/* Property Management Dropdown */}

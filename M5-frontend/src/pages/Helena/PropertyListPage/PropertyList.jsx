@@ -87,13 +87,13 @@ export default function PropertyList() {
             toggleFilter();
             handleButtonClicked();
           }}
-          className={`w-[220px] h-[60px] px-5 py-3 ${
+          className={`w-[220px] h-[60px] ${
             isButtonClicked ? 'bg-slate-200 text-rose-600 ease-linear' : 'bg-red-600 text-white'
-          } rounded-tl-[20px] rounded-tr-[20px] justify-center items-center gap-2.5 absolute left-[150px] m-3 text-base font-bold text-xl font-['Plus Jakarta Sans'] leading-normal tracking-wide`}
+          } rounded-tl-[20px] rounded-tr-[20px] justify-center items-center absolute left-[150px] m-3 text-base font-bold text-xl font-['Plus Jakarta Sans'] leading-normal tracking-wide`}
         >
           FILTERS
         </button>
-
+        <div className={`line relative top-[69px] w-screen h-[3px] ${isButtonClicked? 'bg-slate-200': 'bg-red-600'}`}></div>
         <div className={`filter-section transition-height ${isFilterVisible ? 'h-auto' : 'h-0 overflow-hidden'}`}>
           {isFilterVisible && (
             <PropertyFilter

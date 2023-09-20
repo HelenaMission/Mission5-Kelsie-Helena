@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import PropertyTypes from '../../../components/helenaComponents/filterPage/components/PropertyTypes.jsx';
 import Location from '../../../components/helenaComponents/filterPage/components/Location.jsx';
 import Bed from '../../../components/helenaComponents/filterPage/components/Bed.jsx';
@@ -75,34 +75,29 @@ export default function PropertyFilter({ onReset, handleSubmit }) {
   };
 
   return (
-    <div className='filter-components relative bg-slate-200 top-[70px] h-[700px]'>
-        <PropertyTypes onTypeSelect={handleTypeSelect} />
-        <Location onLocationChange={handleLocationChange} />
-        <Bed onBedSelect={handleBedSelect} />
-        <Baths onBathSelect={handleBathSelect} onReset={handleResetLocal} />
-        <Others onImmediate={handleImmediate} onPets={handlePets} />
-        <Price onPriceChange={handlePriceChange} />
-        <div className='relative left-[1079px] top-[499px]'>
-          <div className='w-[259px] h-12 px-5 py-3 rounded-[50px] border border-red-600 justify-center items-center gap-2.5 inline-flex'>
-            <button
-              type='button'
-              onClick={handleResetLocal}
-              className="text-red-600 text-base font-semibold font-['Plus Jakarta Sans'] uppercase leading-normal tracking-wide"
-            >
-              RESET
-            </button>
-          </div>
-
-          <div
-            type='button'
-            onClick={handleSubmitLocal}
-            className='relative left-[20px] w-[220px] h-12 px-5 py-3 bg-red-600 rounded-[50px] shadow justify-center items-center gap-2.5 inline-flex'
-          >
-            <button className="text-white text-base font-bold font-['DM Sans'] leading-normal tracking-wide">
-              SEARCH
-            </button>
-          </div>
-        </div>
+    <div className='filter-components relative bg-slate-200 top-[60px] h-[630px]'>
+      <PropertyTypes onTypeSelect={handleTypeSelect} />
+      <Location onLocationChange={handleLocationChange} />
+      <Bed onBedSelect={handleBedSelect} />
+      <Baths onBathSelect={handleBathSelect} onReset={handleResetLocal} />
+      <Others onImmediate={handleImmediate} onPets={handlePets} />
+      <Price onPriceChange={handlePriceChange} />
+      <div className="buttons absolute left-[1070px] top-[560px] font-['Plus Jakarta Sans']">
+        <button
+          type='button'
+          onClick={handleResetLocal}
+          className='w-[259px] h-12 mr-5 rounded-[50px] border border-red-600 justify-center items-center inline-flex text-red-600 text-base font-semibold  uppercase leading-normal tracking-wide'
+        >
+          RESET
+        </button>
+        <button
+          type='button'
+          onClick={handleSubmitLocal}
+          className='w-[220px] h-12 bg-red-600 rounded-[50px] shadow justify-center items-center gap-2.5 inline-flex text-white text-base font-bold leading-normal tracking-wide'
+        >
+          SEARCH
+        </button>
       </div>
+    </div>
   );
 }

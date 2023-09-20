@@ -4,8 +4,6 @@ import fs from 'fs';
 import { dbDisconnect } from '../db/dbDisconnect';
 
 const log = console.log;
-// const __filename = new URL(import.meta.url).pathname;
-// const __dirname = path.dirname(__filename);
 
 export const seedPropertyCmd = async () => {
   try {

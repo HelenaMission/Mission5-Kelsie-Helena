@@ -23,17 +23,17 @@ export default function PropertyCard({ matchedProperties, initialProperties }) {
                 </div>
               )}
             </div>
-            <div className='price-box w-[346px] h-5 text-gray-900 text-sm font-bold tracking-widest leading-tight'>
+            <div className='price-box w-[346px] h-5 text-gray-900 text-sm font-bold tracking-wider leading-tight'>
               <span>${property.price}</span>
               <span>/week</span>
             </div>
-            <div className='beds-baths h-6'>
-              <div className='absolute w-6 h-6 left-7 flex'>
-                <img className='w-6 h-6' src={bed} alt='bed logo' />
+            <div className='beds-baths h-6 flex justify-start'>
+              <div className='w-6 h-6 mr-5 flex'>
+                <img src={bed} alt='bed logo' />
                 <p>{property.bed}</p>
               </div>
-              <div className='absolute w-6 h-6 left-1/4 flex'>
-                <img className='w-6 h-6' src={bath} alt='bath logo' />
+              <div className='w-6 h-6 flex'>
+                <img src={bath} alt='bath logo' />
                 <p>{property.bath}</p>
               </div>
             </div>

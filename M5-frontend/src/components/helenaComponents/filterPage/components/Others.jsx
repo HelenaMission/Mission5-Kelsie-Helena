@@ -16,27 +16,25 @@ export default function Others({ onImmediate, onPets }) {
 
   return (
     <div>
-      <div className="left-[719px] top-[450px] relative text-black text-2xl font-bold font-['Plus Jakarta Sans'] leading-loose">
+      <div className="left-[719px] top-[310px] relative text-2xl font-bold font-['Plus Jakarta Sans'] leading-loose">
         Search only
-        <div className='buttons flex'>
+        <div className='buttons flex mt-2'>
           <button
             onClick={handleImmediate}
             className={`${
-              isImmediate ? 'text-red-500 border-red-500' : 'text-stone-500 border-stone-500'
-            } w-[290px] h-11 px-5 py-3 bg-white rounded-[10px] border justify-center items-center gap-2.5 flex text-base font-normal leading-normal tracking-wide`}
+              isImmediate ? 'text-red-600 border-2 border-red-600' : 'text-stone-500 border-stone-500'
+            } w-[290px] h-11 mr-6 bg-white rounded-[10px] border justify-center items-center text-base font-normal leading-normal tracking-wide`}
           >
             Immediate move-in
           </button>
-          <div className='justify-start items-start inline-flex'>
-            <button
-              onClick={handlePets}
-              className={`${
-                isPets ? 'text-red-500 border-red-500' : 'text-stone-500 border-stone-500'
-              } w-[290px] h-11 px-5 py-3 bg-white rounded-[10px] border justify-center items-center gap-2.5 flex text-base font-normal leading-normal tracking-wide`}
-            >
-              Pets allowed
-            </button>
-          </div>
+          <button
+            onClick={handlePets}
+            className={`${
+              isPets ? 'text-red-600 border-2 border-red-600' : 'text-stone-500 border-stone-500'
+            } w-[290px] h-11 bg-white rounded-[10px] border justify-center items-center text-base font-normal leading-normal tracking-wide`}
+          >
+            Pets allowed
+          </button>
         </div>
       </div>
     </div>
