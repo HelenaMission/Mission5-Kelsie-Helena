@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import background from "../../../images/homePage/background.png";
 
 const ServiceCard = ({ icons, service, description, button }) => {
   const [iconDataUrl, setIconDataUrl] = useState(null);
 
   useEffect(() => {
-    // Function to convert binary data to a Base64 Data URL
     const arrayBufferToBase64 = (buffer) => {
       let binary = "";
       const bytes = new Uint8Array(buffer);
@@ -15,9 +15,7 @@ const ServiceCard = ({ icons, service, description, button }) => {
       return "data:image/jpeg;base64," + btoa(binary);
     };
 
-    // Check if icons and icons.data are defined
     if (icons && icons.data) {
-      // Read and convert the binary data
       const reader = new FileReader();
       reader.onload = () => {
         const dataUrl = arrayBufferToBase64(reader.result);
@@ -28,20 +26,34 @@ const ServiceCard = ({ icons, service, description, button }) => {
   }, [icons]);
 
   return (
-    <div className="w-1/3 p-4">
-      <div className="bg-white rounded-lg p-6 shadow-lg">
-        {iconDataUrl && (
-          <img
-            src={iconDataUrl}
-            alt="Service Icon"
-            className="w-16 h-16 mx-auto mb-4"
-          />
-        )}
+    <div className="w-1/4 p-4 m-1 flex space-evenly justify-center items-center">
+      <div className="p-6 text-center">
+        <div
+          className="w-[94px] h-[94px] mx-auto mb-4 relative"
+          style={{
+            backgroundColor: "#E9EAF0",
+            borderRadius: "29px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div
+            className="w-16 h-16"
+            style={{
+              backgroundImage: `url(${iconDataUrl})`,
+              backgroundSize: "contain",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+            }}
+          ></div>
+        </div>
+
         <h3 className="text-black font-plus-jakarta-sans text-2xl font-semibold mb-2">
           {service}
         </h3>
-        <p className="text-gray-700 text-center mb-4">{description}</p>
-        <button className="bg-red-700 text-white px-4 py-2 rounded-full">
+        <p className="text-gray-700 mb-4 text-center">{description}</p>
+        <button className="text-zinc-900 text-base font-normal font-['Plus Jakarta Sans'] underline leading-[5px] rounded-full">
           {button}
         </button>
       </div>
@@ -64,26 +76,39 @@ const Services = () => {
   }, []);
 
   return (
-    <section className="h-932">
-      <h2 className="text-black font-plus-jakarta-sans text-4xl font-semibold mb-2 border-b-3 border-red-600 w-1/4">
-        Services
-      </h2>
-      <p className="text-gray-700 text-center mb-8 w-3/4">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet
-        accumsan arcu.
-      </p>
-      <div className="flex flex-wrap">
-        {services.map((service, index) => (
-          <ServiceCard
-            key={index}
-            icons={service.icons} // Assuming 'icons' is the field name in your MongoDB model
-            service={service.service}
-            description={service.description}
-            button={service.button}
-          />
-        ))}
-      </div>
-    </section>
+    <div
+      className="bg-white"
+      style={{
+        backgroundImage: `url(${background})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <section className="h-screen flex flex-col justify-center items-center ml-14 mr-14">
+        <h2 className="text-black font-plus-jakarta-sans text-4xl font-bold mb-2">
+          Services
+        </h2>
+        <div className="w-[188px] h-[2px] bg-red-600 mb-4"></div>{" "}
+        <div className="w-[381.73px] h-[49.13px] text-center text-gray-900 text-lg font-normal font-['Plus Jakarta Sans'] leading-[27px]">
+          Efficient property management and curated rental listings – your
+          gateway to hassle-free living and investment
+        </div>
+        <br />
+        <br />
+        <div className="flex flex-wrap justify-between">
+          {services.map((service, index) => (
+            <ServiceCard
+              key={index}
+              icons={service.icons}
+              service={service.service}
+              description={service.description}
+              button={service.button}
+            />
+          ))}
+        </div>
+      </section>
+    </div>
   );
 };
 
