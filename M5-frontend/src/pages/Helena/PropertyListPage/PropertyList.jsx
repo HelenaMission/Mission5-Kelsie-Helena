@@ -89,12 +89,18 @@ export default function PropertyList() {
           }}
           className={`w-[220px] h-[60px] ${
             isButtonClicked ? 'bg-slate-200 text-rose-600 ease-linear' : 'bg-red-600 text-white'
-          } rounded-tl-[20px] rounded-tr-[20px] justify-center items-center absolute left-[150px] m-3 text-base font-bold text-xl font-['Plus Jakarta Sans'] leading-normal tracking-wide`}
+          } ease-in-out duration-300 rounded-tl-[20px] rounded-tr-[20px] justify-center items-center absolute left-[150px] m-3 text-base font-bold text-xl font-['Plus Jakarta Sans'] leading-normal tracking-wide`}
         >
           FILTERS
         </button>
-        <div className={`line relative top-[69px] w-screen h-[3px] ${isButtonClicked? 'bg-slate-200': 'bg-red-600'}`}></div>
-        <div className={`filter-section transition-height ${isFilterVisible ? 'h-auto' : 'h-0 overflow-hidden'}`}>
+        <div
+          className={`line relative top-[69px] w-screen h-[3px] ${isButtonClicked ? 'bg-slate-200' : 'bg-red-600'}`}
+        ></div>
+        <div
+          className={`filter-section transition-height duration-300 ${
+            isFilterVisible ? 'h-auto' : 'h-0 overflow-hidden'
+          }`}
+        >
           {isFilterVisible && (
             <PropertyFilter
               key={resetKey}
