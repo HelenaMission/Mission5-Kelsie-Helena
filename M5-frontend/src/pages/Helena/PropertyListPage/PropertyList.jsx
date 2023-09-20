@@ -1,57 +1,116 @@
 import PropertyFilter from '../FilterPage/PropertyFilter';
 import { useState, useEffect } from 'react';
-import bed from '../../../images/listingPage/bed.jpg';
-import bath from '../../../images/listingPage/bath.jpg';
+import Footer from '../../../components/kelsieComponents/homePage/Footer.jsx';
+import NavBar from '../../../components/kelsieComponents/homePage/NavBar.jsx';
+import PropertyCard from '../../../components/helenaComponents/listingPage/components/PropertyCard.jsx';
+import Headline from '../../../components/helenaComponents/listingPage/components/Headline';
+import axios from 'axios';
 
 export default function PropertyList() {
   const [matchedProperties, setMatchedProperties] = useState([]);
-  
+  const [isFilterVisible, setIsFilterVisible] = useState(false);
+  const [initialProperties, setInitialProperties] = useState([]);
+  const [resetKey, setResetKey] = useState(0);
+  const [isButtonClicked, setIsButtonClicked] = useState(false);
 
   const filteredProperties = (data) => {
     console.log(data.property);
-      setMatchedProperties(data.property);
-  }
+    setMatchedProperties(data.property);
+  };
+
+  const toggleFilter = () => {
+    setIsFilterVisible(!isFilterVisible);
+  };
+
+  const unfilteredProperties = (data) => {
+    console.log(data.property);
+    setInitialProperties(data.property);
+  };
+
+  const handleSubmit = async (filter) => {
+    try {
+      const response = await axios.post('http://localhost:4000/api/filter', filter, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.status === 200) {
+        console.log('Matched data:', response.data);
+        filteredProperties(response.data);
+      } else {
+        console.log('Error fetching data:', response.data);
+      }
+    } catch (error) {
+      console.log('Error fetching data:', error);
+    }
+  };
+
+  const handleReset = () => {
+    setResetKey((prevKey) => prevKey + 1);
+    setMatchedProperties([]);
+  };
+
+  const handleButtonClicked = () => {
+    setIsButtonClicked(!isButtonClicked);
+  };
 
   useEffect(() => {
     console.log('matchedProperties has changed:', matchedProperties);
   }, [matchedProperties]);
 
-  
+  useEffect(() => {
+    async function loadAllProperties() {
+      try {
+        const response = await axios.get('http://localhost:4000/api/properties');
+        if (response.status === 200) {
+          console.log('All data:', response.data);
+          unfilteredProperties(response.data);
+        } else {
+          console.log('Error fetching data:', response.data);
+        }
+      } catch (error) {
+        console.log('Error fetching data:', error);
+      }
+    }
+
+    loadAllProperties();
+  }, []);
 
   return (
     <div>
-      <PropertyFilter filteredProperties={filteredProperties} />
-      <div className='property-grid grid grid-cols-3 gap-9 left-[200px] top-[900px] absolute'>
-        {matchedProperties.map((property, index) => (
-          <div className='card w-96 bg-base-100 shadow-xl' key={property._id}>
-            <div className='images-container'>
-                <img src={`data:image/jpeg;base64,${property.img.img1}`} alt={`Property ${index +1}`} />
-            </div>
-            <div className='card-body'>
-              <div className="w-[346px] h-6 text-gray-900 text-lg font-bold font-['Plus Jakarta Sans'] leading-loose">
-                {property.address && (
-                  <div>
-                    {property.address.unit_number ? `${property.address.unit_number} / ` : ''}
-                    {property.address.street_number} {property.address.street_name}, {property.address.suburb}
-                  </div>
-                )}
-              </div>
-              <div className='price-box w-[272px] h-[21px]'>
-                <span className="text-gray-900 text-xs font-bold font-['Plus Jakarta Sans'] leading-tight">
-                  ${property.price}
-                </span>
-                <span className="text-gray-900 text-xs font-bold font-['Plus Jakarta Sans'] leading-tight">/week</span>
-              </div>
-              <div className='beds-baths'>
-                <img className='w-6 h-6 relative' src={bed} alt='bed logo' />
-                <p>{property.bed}</p>
-                <img className='w-6 h-6 relative' src={bath} alt='bath logo' />
-                <p>{property.bath}</p>
-              </div>
-            </div>
-          </div>
-        ))}
+      <NavBar />
+      <div className='h-auto pb-36'>
+        <Headline />
+        <button
+          onClick={() => {
+            toggleFilter();
+            handleButtonClicked();
+          }}
+          className={`w-[220px] h-[60px] ${
+            isButtonClicked ? 'bg-slate-200 text-rose-600 ease-linear' : 'bg-red-600 text-white'
+          } rounded-tl-[20px] rounded-tr-[20px] justify-center items-center absolute left-[150px] m-3 text-base font-bold text-xl font-['Plus Jakarta Sans'] leading-normal tracking-wide`}
+        >
+          FILTERS
+        </button>
+        <div className={`line relative top-[69px] w-screen h-[3px] ${isButtonClicked? 'bg-slate-200': 'bg-red-600'}`}></div>
+        <div className={`filter-section transition-height ${isFilterVisible ? 'h-auto' : 'h-0 overflow-hidden'}`}>
+          {isFilterVisible && (
+            <PropertyFilter
+              key={resetKey}
+              filteredProperties={filteredProperties}
+              handleSubmit={handleSubmit}
+              onReset={handleReset}
+            />
+          )}
+        </div>
+        <div className={`relative top-[85px] pt-12 flex justify-center ${isFilterVisible ? 'h-auto' : ''}`}>
+          <PropertyCard matchedProperties={matchedProperties} initialProperties={initialProperties} />
+          <br />
+          <br />
+        </div>
       </div>
+      <Footer />
     </div>
   );
 }

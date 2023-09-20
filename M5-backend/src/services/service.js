@@ -23,7 +23,6 @@ async function findMatching(filter) {
     };
 
     const matchingProperties = await Property.find(query)
-    console.log('Matching properties', matchingProperties);
     return matchingProperties;
   } catch (error) {
     console.log('Error in findingMatching', error)
