@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   frontend:
-    build: 
+    build:
       context: ./M5-frontend
     ports:
       - 3000:3000
@@ -10,7 +10,7 @@ services:
       - mission5
 
   backend:
-    build: 
+    build:
       context: ./M5-backend
     ports:
       - 4000:4000
@@ -23,13 +23,12 @@ services:
       - database
     links:
       - database
-   
 
   database:
     image: mongo:latest
     restart: always
     ports:
-      - 27017:27017
+      - 27018:27017
     networks:
       - mission5
     volumes:
@@ -46,9 +45,9 @@ services:
       - mission5
 
 networks:
-    mission5:
-      driver: bridge
-      
+  mission5:
+    driver: bridge
+
 volumes:
-  mission5: 
+  mission5:
     driver: local

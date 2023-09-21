@@ -1,8 +1,11 @@
 import express from 'express';
-import { controller } from '../controllers/controller.js';
+import { getProperties, filterProperties } from '../controllers/controller.js';
+import { getServices } from "../controllers/controller.js";
 
 const router = express.Router();
 
-router.get('/', controller);
+router.get('/properties', getProperties);
+router.post('/filter',filterProperties)
+router.get("/services", getServices);
 
 export default router;
