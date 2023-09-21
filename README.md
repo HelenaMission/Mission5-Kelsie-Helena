@@ -17,11 +17,11 @@ https://github.com/HelenaMission/Mission5-Kelsie-Helena/assets/122342654/a84ee20
 
 
 <h3 align="center">Metro Property</h3>
-<h4 align="center">Developing an application by a UX designer, with Docker and Agile Working Methodology.</h4>
+<h4 align="center">Developing an application by a UX designer, with CLI, Docker and Agile Working Methodology.</h4>
 
   <p align="center">
    In this project, we were given a redesigned Metro Property website by UX designers, and were to develop this application within a one week time frame from design handover.
-During this project we were to implement agile working practices, speed up deployment using docker and ensure frontend, backend and database execution on each application page.
+During this project we were to implement agile working practices, create a cli tool to seed data to MongoDB, speed up deployment using docker and ensure frontend, backend and database execution on each application page.
     Full tasks included:
 - 
     <br />
