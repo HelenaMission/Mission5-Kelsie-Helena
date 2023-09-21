@@ -148,15 +148,15 @@ const Navbar = () => {
               className="menu-link block hover:bg-indigo-300 p-4"
             >
               Disputes Process
-            </Link>{" "}
-          </div>{" "}
-        </div>{" "}
+            </Link>
+          </div>
+        </div>
         <Link
           to="/listings"
           className="text-black hover:text-blue-500 pl-5 pr-10"
         >
           Listings
-        </Link>{" "}
+        </Link>
       </div>
     </nav>
   );

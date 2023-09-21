@@ -9,25 +9,18 @@ import Footer from "../../../components/kelsieComponents/homePage/Footer";
 const HomePage = () => {
   return (
     <div>
-      {/* Navbar */}
       <Navbar />
 
-      {/* Hero Image  */}
       <Hero />
 
-      {/* Sponsors Bar  */}
       <Sponsors />
 
-      {/* Services Section  */}
       <Services />
 
-      {/* Blog Section  */}
       <Blog />
 
-      {/* Reviews Section  */}
       <Reviews />
 
-      {/* Footer  */}
       <Footer />
     </div>
   );
