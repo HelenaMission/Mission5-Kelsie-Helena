@@ -6,8 +6,9 @@ COPY package*.json ./
 
 COPY . .
 
-RUN npm install --force
+RUN npm ci --legacy-peer-deps
 
 EXPOSE 3000
 
 CMD ["npm", "start"]
+
