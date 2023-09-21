@@ -1,9 +1,9 @@
-import imEnoughLogo from "../../../images/homePage/imEnoughLogo.png";
-import westpacLogo from "../../../images/homePage/westpacLogo.png";
-import reaLogo from "../../../images/homePage/reaLogo.png";
-import apacInsiderLogo from "../../../images/homePage/apacInsiderLogo.png";
-import queenCityLawLogo from "../../../images/homePage/queenCityLawLogo.png";
-import topReviewsLogo from "../../../images/homePage/topReviewsLogo.png";
+import imEnoughLogo from "../../images/homePage/imEnoughLogo.png";
+import westpacLogo from "../../images/homePage/westpacLogo.png";
+import reaLogo from "../../images/homePage/reaLogo.png";
+import apacInsiderLogo from "../../images/homePage/apacInsiderLogo.png";
+import queenCityLawLogo from "../../images/homePage/queenCityLawLogo.png";
+import topReviewsLogo from "../../images/homePage/topReviewsLogo.png";
 
 const Sponsors = () => {
   const logoImageStyle = {

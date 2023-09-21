@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../../images/homePage/metroLogo.png";
+import logo from "../../images/homePage/metroLogo.png";
 
 const Navbar = () => {
   const [isPropertyManagementOpen, setPropertyManagementOpen] = useState(false);
