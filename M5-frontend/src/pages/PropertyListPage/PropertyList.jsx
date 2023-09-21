@@ -1,9 +1,9 @@
 import PropertyFilter from '../FilterPage/PropertyFilter';
 import { useState, useEffect } from 'react';
-import Footer from '../../../components/kelsieComponents/homePage/Footer.jsx';
-import NavBar from '../../../components/kelsieComponents/homePage/NavBar.jsx';
-import PropertyCard from '../../../components/helenaComponents/listingPage/components/PropertyCard.jsx';
-import Headline from '../../../components/helenaComponents/listingPage/components/Headline';
+import Footer from '../../components/kelsieComponents/homePage/Footer.jsx';
+import NavBar from '../../components/kelsieComponents/homePage/NavBar.jsx';
+import PropertyCard from '../../components/listingPage/PropertyCard.jsx';
+import Headline from '../../components/listingPage/Headline';
 import axios from 'axios';
 
 export default function PropertyList() {

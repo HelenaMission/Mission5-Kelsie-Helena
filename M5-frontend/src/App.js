@@ -1,5 +1,5 @@
 import HomePage from "./pages/Kelsie/HomePage/Home.jsx";
-import PropertyList from "../src/pages/Helena/PropertyListPage/PropertyList.jsx";
+import PropertyList from "../src/pages/PropertyListPage/PropertyList.jsx";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
