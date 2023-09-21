@@ -12,13 +12,18 @@
 
 Helena Lee | Kelsie Smith
 
-  <a href= "https://github.com/HelenaMission/Mission5-Kelsie-Helena">
-  <img src="./frontend/src/images/metroProperty.png" alt="Banner" width="1280" height="800">
-  </a>
-<h3 align="center">Integrating MongoDB</h3>
+
+https://github.com/HelenaMission/Mission5-Kelsie-Helena/assets/122342654/a84ee209-c7db-44bb-971a-bedfe366efb8
+
+
+<h3 align="center">Metro Property</h3>
+<h4 align="center">Developing an application by a UX designer, with Docker and Agile Working Methodology.</h4>
 
   <p align="center">
-   In this project, we integrated MongoDB to enhance our previously created API to deliver an application that successfully helps a user find a car that is for sale that is similar to a car image they like. This involved creating the CLI tool to seed data to our local MongoDB and modifying our current API that analyses an uploaded image by the user, and then takes the car body type and color and retrieves matching vehicles from the MongoDB to display these on the page. 
+   In this project, we were given a redesigned Metro Property website by UX designers, and were to develop this application within a one week time frame from design handover.
+During this project we were to implement agile working practices, speed up deployment using docker and ensure frontend, backend and database execution on each application page.
+    Full tasks included:
+- 
     <br />
     <a href="https://github.com/HelenaMission/Mission5-Kelsie-Helena"><strong>Explore the docs »</strong></a>
 
@@ -51,7 +56,6 @@ Helena Lee | Kelsie Smith
 
 ## About The Project
 
-<img src="./frontend/src/images/pageImg.png" alt="Logo" width="10000" height="800">
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -59,7 +63,7 @@ Helena Lee | Kelsie Smith
 
 - [![MongoDB][MongoDB.logo]][MongoDB-url]
 - [![Node.js][Node.js.logo]][Nodejs-url]
-- [![MongoDB][React.logo]][React-url]
+- [![React.js][React.js.logo]][React-url]
 - [![Node.js][Jira.logo]][Jira-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -76,21 +80,20 @@ To use the application, follow these steps:
 
 ### Installation
 
-1. Require the API Key with permission from luis@missionreadyhq.com
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/HelenaMission/Mission5-Kelsie-Helena
    ```
-3. Install NPM packages from both backend and frontend folders
+2. Install NPM packages from both backend and frontend folders
    ```sh
    npm install
    ```
-4. Enter your API Key, Endpoint, Headers and Port in `.env`
-5. Open backend folder in terminal and run start script
+3. Enter your MongoDB URL and Port in `.env`
+4. Open backend folder in terminal and run start script
    ```sh
-   npm run start
+   npm run dev
    ```
-6. Open frontend folder in terminal and run start script
+5. Open frontend folder in terminal and run start script
    ```sh
    npm run start
    ```
@@ -103,7 +106,7 @@ To use the application, follow these steps:
 
 Helena Lee - helena@missionreadyhq.com
 
-- - [![LinkedIn - Helena Lee][linkedin-shield]][helena-linkedin-url]
+- [![LinkedIn - Helena Lee][linkedin-shield]][helena-linkedin-url]
     <br></br><br></br>
     Kelsie Smith - kelsieS@missionreadyhq.com
 
@@ -133,7 +136,7 @@ Helena Lee - helena@missionreadyhq.com
 [kelsie-linkedin-url]: https://www.linkedin.com/in/kelsieSmitty/
 [helena-linkedin-url]: https://www.linkedin.com/in/helena-lee-0b2505286/
 [product-screenshot]: images/screenshot.png
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React.js.logo]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
 [Nodejs-url]: https://nodejs.org/en
 [Node.js.logo]: https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white
