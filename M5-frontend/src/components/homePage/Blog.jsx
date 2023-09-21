@@ -1,10 +1,10 @@
 import { useState } from "react";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import Arrow from "../../../images/homePage/arrow.png";
-import Carousel1 from "../../../images/homePage/carousel1.png";
-import Carousel2 from "../../../images/homePage/carousel2.png";
-import Carousel3 from "../../../images/homePage/carousel3.png";
+import Arrow from "../../images/homePage/arrow.png";
+import Carousel1 from "../../images/homePage/carousel1.png";
+import Carousel2 from "../../images/homePage/carousel2.png";
+import Carousel3 from "../../images/homePage/carousel3.png";
 
 const Blog = () => {
   const [activePost, setActivePost] = useState(0);

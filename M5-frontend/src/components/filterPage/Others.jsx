@@ -1,8 +1,8 @@
-import React from 'react';
+import { useState } from 'react';
 
 export default function Others({ onImmediate, onPets }) {
-  const [isImmediate, setIsImmediate] = React.useState(false);
-  const [isPets, setIsPets] = React.useState(false);
+  const [isImmediate, setIsImmediate] = useState(false);
+  const [isPets, setIsPets] = useState(false);
 
   const handleImmediate = () => {
     setIsImmediate(!isImmediate);
@@ -16,7 +16,7 @@ export default function Others({ onImmediate, onPets }) {
 
   return (
     <div>
-      <div className="left-[719px] top-[310px] relative text-2xl font-bold font-['Plus Jakarta Sans'] leading-loose">
+      <div className="absolute left-[719px] top-[390px]  text-2xl font-bold font-['Plus Jakarta Sans'] leading-loose">
         Search only
         <div className='buttons flex mt-2'>
           <button

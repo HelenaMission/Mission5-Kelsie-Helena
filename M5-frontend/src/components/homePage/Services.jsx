@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import background from "../../../images/homePage/background.png";
+import background from "../../images/homePage/background.png";
 
 const ServiceCard = ({ icons, service, description, button }) => {
   const [iconDataUrl, setIconDataUrl] = useState(null);

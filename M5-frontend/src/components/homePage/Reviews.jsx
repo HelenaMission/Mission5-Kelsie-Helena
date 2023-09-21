@@ -1,5 +1,5 @@
 import { useState } from "react";
-import StarImage from "../../../images/homePage/star.png";
+import StarImage from "../../images/homePage/star.png";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
