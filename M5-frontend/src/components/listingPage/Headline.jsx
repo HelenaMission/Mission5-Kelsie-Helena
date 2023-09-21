@@ -5,13 +5,12 @@ import { Link } from 'react-router-dom';
 export default function Headline() {
   return (
     <div>
-      <Link to='/' class='relative left-[70px] top-[70px]'>
+      <Link to='/' class='absolute left-[70px] top-[120px] flex'>
         <img src={circle} alt='circle logo' className='w-[65px] h-[65px]' />
-        <img src={arrow} alt='arrow logo' className='absolute bottom-2.5 left-2.5' />
+        <img src={arrow} alt='arrow logo' className='absolute left-[11px] top-[10px]' />
       </Link>
 
-      <button className='redirect-btn absolute'></button>
-      <div className='text-center py-7'>
+      <div className='text-center pt-12'>
         <div className="text-red-600 text-5xl font-bold font-['Plus Jakarta Sans'] leading-[100px] tracking-wide">
           Properties to rent
         </div>
