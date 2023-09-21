@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import PropertyTypes from '../../../components/helenaComponents/filterPage/components/PropertyTypes.jsx';
-import Location from '../../../components/helenaComponents/filterPage/components/Location.jsx';
-import Bed from '../../../components/helenaComponents/filterPage/components/Bed.jsx';
-import Baths from '../../../components/helenaComponents/filterPage/components/Baths.jsx';
-import Others from '../../../components/helenaComponents/filterPage/components/Others.jsx';
-import Price from '../../../components/helenaComponents/filterPage/components/Price.jsx';
+import PropertyTypes from '../../components/filterPage/PropertyTypes.jsx';
+import Location from '../../components/filterPage/Location.jsx';
+import Bed from '../../components/filterPage/Bed.jsx';
+import Baths from '../../components/filterPage/Baths.jsx';
+import Others from '../../components/filterPage/Others.jsx';
+import Price from '../../components/filterPage/Price.jsx';
 
 export default function PropertyFilter({ onReset, handleSubmit }) {
   const [types, setTypes] = useState([]);

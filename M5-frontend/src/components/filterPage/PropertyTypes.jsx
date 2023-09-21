@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 export default function PropertyTypes({ onTypeSelect }) {
-  const [buttons, setButtons] = useState(['All', 'House', 'Apartment', 'Townhouse', 'Section', 'Unit']);
+  const [typeButtons, setTypeButtons] = useState(['All', 'House', 'Apartment', 'Townhouse', 'Section', 'Unit']);
   const [selectedTypes, setSelectedTypes] = useState([]);
 
   const handleTypeClick = (button) => {
@@ -20,7 +20,7 @@ export default function PropertyTypes({ onTypeSelect }) {
     <div className="absolute left-[719px] top-[65px] font-['Plus Jakarta Sans']">
       <div className='text-2xl font-bold leading-loose'>Property types</div>
       <div className='grid grid-cols-3 gap-5 mt-2'>
-        {buttons.map((button) => (
+        {typeButtons.map((button) => (
             <button
               onClick={() => handleTypeClick(button)}
               key={button}

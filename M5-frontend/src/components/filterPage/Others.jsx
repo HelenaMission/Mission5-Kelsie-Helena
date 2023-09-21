@@ -1,8 +1,8 @@
-import React from 'react';
+import { useState } from 'react';
 
 export default function Others({ onImmediate, onPets }) {
-  const [isImmediate, setIsImmediate] = React.useState(false);
-  const [isPets, setIsPets] = React.useState(false);
+  const [isImmediate, setIsImmediate] = useState(false);
+  const [isPets, setIsPets] = useState(false);
 
   const handleImmediate = () => {
     setIsImmediate(!isImmediate);

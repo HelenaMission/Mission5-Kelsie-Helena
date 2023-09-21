@@ -1,18 +1,13 @@
-import React from 'react'
-import circle from '../../../../images/listingPage/circle.jpg'
-import arrow from '../../../../images/listingPage/arrow.jpg'
+import circle from '../../images/listingPage/circle.jpg'
+import arrow from '../../images/listingPage/arrow.jpg'
 import { Link } from 'react-router-dom';
 
 export default function Headline() {
   return (
     <div>
-      <Link
-        to='/'
-        class='relative left-[70px] top-[70px]'>
+      <Link to='/' class='relative left-[70px] top-[70px]'>
         <img src={circle} alt='circle logo' className='w-[65px] h-[65px]' />
-        <div class='absolute bottom-2.5 left-2.5'>
-          <img src={arrow} alt='arrow logo' />
-        </div>
+        <img src={arrow} alt='arrow logo' className='absolute bottom-2.5 left-2.5' />
       </Link>
 
       <button className='redirect-btn absolute'></button>

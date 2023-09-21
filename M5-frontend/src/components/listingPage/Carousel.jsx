@@ -1,7 +1,7 @@
-import React from 'react';
+import { useState } from 'react';
 
 const Carousel = ({ images, index }) => {
-  const [currentIndex, setCurrentIndex] = React.useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
     setCurrentIndex((currentIndex + 1) % images.length);
