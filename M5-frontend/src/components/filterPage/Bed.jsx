@@ -17,7 +17,7 @@ export default function Bed({ onBedSelect }) {
   }, [selectedBeds, onBedSelect]);
 
   return (
-    <div className='relative left-[719px] top-[268px]'>
+    <div className='absolute left-[719px] top-[268px]'>
       <div className="text-2xl font-bold font-['Plus Jakarta Sans'] leading-loose">
         Bedrooms
         <div className='flex mt-2'>

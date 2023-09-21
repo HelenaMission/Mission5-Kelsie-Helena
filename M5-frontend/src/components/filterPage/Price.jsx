@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import InputRange from 'react-input-range';
-import '../styles/slider-input-range.css';
+import '../../components/filterPage/slider-input-range.css';
 
 export default function Price({ onPriceChange }) {
   const [priceRange, setPriceRange] = useState({ min: 100, max: 1000 });
@@ -11,7 +11,7 @@ export default function Price({ onPriceChange }) {
   };
 
   return (
-    <div className='relative left-[199px] top-[68px]'>
+    <div className='absolute left-[199px] top-[238px]'>
       <div className="text-2xl font-bold font-['Plus Jakarta Sans'] leading-loose">
         Weekly rent
       </div>

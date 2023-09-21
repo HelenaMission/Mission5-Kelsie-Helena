@@ -1,7 +1,6 @@
-import React from 'react';
-import bed from '../../../../images/listingPage/bed.jpg';
-import bath from '../../../../images/listingPage/bath.jpg';
-import Carousel from '../../../helenaComponents/listingPage/components/Carousel';
+import bed from '../../images/listingPage/bed.jpg';
+import bath from '../../images/listingPage/bath.jpg';
+import Carousel from '../../components/listingPage/Carousel.jsx';
 
 export default function PropertyCard({ matchedProperties, initialProperties }) {
   const propertiesToDisplay = matchedProperties.length > 0 ? matchedProperties : initialProperties;
