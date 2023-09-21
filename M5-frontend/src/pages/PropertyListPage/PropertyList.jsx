@@ -94,7 +94,7 @@ export default function PropertyList() {
           FILTERS
         </button>
         <div
-          className={`line relative top-[69px] w-screen h-[3px] ${isButtonClicked ? 'bg-slate-200' : 'bg-red-600'}`}
+          className={`line relative top-[69px] w-auto h-[3px] ${isButtonClicked ? 'bg-slate-200' : 'bg-red-600'}`}
         ></div>
         <div
           className={`filter-section transition-height duration-300 ${
@@ -111,9 +111,14 @@ export default function PropertyList() {
           )}
         </div>
         <div className={`relative top-[85px] pt-12 flex justify-center ${isFilterVisible ? 'h-auto' : ''}`}>
-          <PropertyCard matchedProperties={matchedProperties} initialProperties={initialProperties} />
-          <br />
-          <br />
+          {matchedProperties.length === 0 && initialProperties.length === 0 ? (
+            <div className='no-result text-center'>
+              <p className='text-rose-600 font-bold text-5xl'> Oops! No properties found</p>
+              <p className='text-3xl mt-8'>Please search again</p>
+            </div>
+          ) : (
+            <PropertyCard matchedProperties={matchedProperties} initialProperties={initialProperties} />
+          )}
         </div>
       </div>
       <Footer />
