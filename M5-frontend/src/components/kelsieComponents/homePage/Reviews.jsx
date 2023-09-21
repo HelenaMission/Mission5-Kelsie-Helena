@@ -90,7 +90,7 @@ const Reviews = () => {
           text={reviewsData[(currentCard + 2) % reviewsData.length].text}
         />
       </div>
-      <div className="w-[100%] h-[26.37px] justify-center items-start gap-[43.94px] inline-flex m-7">
+      <div className="w-[100%] h-[26.37px] justify-center items-start gap-[43.94px] mt-7 mb-7 inline-flex ">
         <ArrowBackIcon
           style={{ cursor: "pointer" }}
           onClick={handlePrevClick}
