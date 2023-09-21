@@ -1,4 +1,4 @@
-import HomePage from "./pages/HomePage/HomePage.jsx";
+import HomePage from "../src/pages/HomePage/Home.jsx";
 import PropertyList from "../src/pages/PropertyListPage/PropertyList.jsx";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
