@@ -11,7 +11,7 @@ export default function Price({ onPriceChange }) {
   };
 
   return (
-    <div className='relative left-[199px] top-[68px]'>
+    <div className='absolute left-[199px] top-[238px]'>
       <div className="text-2xl font-bold font-['Plus Jakarta Sans'] leading-loose">
         Weekly rent
       </div>
