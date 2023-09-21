@@ -4,12 +4,40 @@ import fs from 'fs';
 import { dbDisconnect } from '../db/dbDisconnect';
 
 const log = console.log;
-// const __filename = new URL(import.meta.url).pathname;
-// const __dirname = path.dirname(__filename);
 
 export const seedPropertyCmd = async () => {
   try {
     const seedingProperty = [
+      {
+        price: 480,
+        type: 'House',
+        bed: 2,
+        bath: 1.5,
+        address: { street_number: 35, street_name: 'Morihana Close', suburb: 'Glen Eden' },
+        img: {
+          img1: readFile('35_morihana_close_gleneden_2bd_1.5bt_$480.jpg'),
+          img2: readFile('35_morihana_close_2_1.jpg'),
+          img3: readFile('35_morihana_close_3_1.jpg'),
+        },
+        pet: true,
+        parking: true,
+        immediate: true,
+      },
+      {
+        price: 560,
+        type: 'Townhouse',
+        bed: 2,
+        bath: 1,
+        address: { street_number: 14, street_name: 'Omana Road', suburb: 'Milford' },
+        img: {
+          img1: readFile('14_omana_rd_milford_2bd_1bt_$560.jpg'),
+          img2: readFile('14_omana_rd_2_1.jpg'),
+          img3: readFile('14_omana_rd_3_1.jpg'),
+        },
+        pet: false,
+        parking: true,
+        immediate: false,
+      },
       {
         price: 530,
         type: 'Unit',
@@ -27,25 +55,10 @@ export const seedPropertyCmd = async () => {
         bed: 3,
         bath: 1,
         address: { street_number: 7, street_name: 'Cutler Street', suburb: 'New Lynn' },
-        img: {img1:readFile('7_cutler_st_newlynn_3bd_1bt_$720.jpg')},
+        img: { img1: readFile('7_cutler_st_newlynn_3bd_1bt_$720.jpg') },
         pet: true,
         parking: true,
         immediate: true,
-      },
-      {
-        price: 560,
-        type: 'Townhouse',
-        bed: 2,
-        bath: 1,
-        address: { street_number: 14, street_name: 'Omana Road', suburb: 'Milford' },
-        img: {
-          img1: readFile('14_omana_rd_milford_2bd_1bt_$560.jpg'),
-          img2: readFile('14_omana_rd_2.jpg'),
-          img3: readFile('14_omana_rd_3.jpg'),
-        },
-        pet: false,
-        parking: true,
-        immediate: false,
       },
       {
         price: 980,
@@ -53,25 +66,10 @@ export const seedPropertyCmd = async () => {
         bed: 3,
         bath: 2,
         address: { street_number: 16, street_name: 'Stanley Avenue', suburb: 'Milford' },
-        img: { img1: readFile('16_stanley_ave_milford_3bd_2bt_$980.jpg')},
+        img: { img1: readFile('16_stanley_ave_milford_3bd_2bt_$980.jpg') },
         pet: false,
         parking: true,
         immediate: false,
-      },
-      {
-        price: 480,
-        type: 'House',
-        bed: 2,
-        bath: 1.5,
-        address: { street_number: 35, street_name: 'Morihana Close', suburb: 'Glen Eden' },
-        img: {
-          img1: readFile('35_morihana_close_gleneden_2bd_1.5bt_$480.jpg'),
-          img2: readFile('35_morihana_close_2.jpg'),
-          img3: readFile('35_morihana_close_3.jpg'),
-        },
-        pet: true,
-        parking: true,
-        immediate: true,
       },
       {
         price: 730,
@@ -100,8 +98,8 @@ export const seedPropertyCmd = async () => {
         type: 'Apartment',
         bed: 1,
         bath: 1,
-        address: { unit_number: 701, street_number: 76, street_name: 'Wakefield Street', suburb: 'City Central' },
-        img: { img1: readFile('701_76_wakefield_st_citycentral_1bd_1bt_$400.jpg') },
+        address: { unit_number: 701, street_number: 76, street_name: 'Grange Street', suburb: 'City Central' },
+        img: { img1: readFile('701_76_grange_st_citycentral_1bd_1bt_$400.jpg') },
         pet: false,
         parking: false,
         immediate: true,
@@ -111,8 +109,8 @@ export const seedPropertyCmd = async () => {
         type: 'House',
         bed: 2,
         bath: 1,
-        address: { street_number: 1229, street_name: 'Whangaparaoa Road', suburb: 'Gulf Harbour' },
-        img: { img1: readFile('1229_whangaparaoa_rd_gulfharbour_2bd_1bt_$530.jpg') },
+        address: { street_number: 33, street_name: 'Serene Place', suburb: 'Gulf Harbour' },
+        img: { img1: readFile('33_serene_pl_gulfharbour_2bd_1bt_$530.jpg') },
         pet: true,
         parking: true,
         immediate: true,

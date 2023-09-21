@@ -15,22 +15,30 @@ const Sponsors = () => {
   return (
     <section className="bg-gray-200 h-[120px] flex items-center justify-between px-6 py-2">
       <div className="p-6 h-[150px]">
-        <img src={imEnoughLogo} alt="Logo 1" style={logoImageStyle} />
+        <img src={imEnoughLogo} alt="IAmEnoughLogo" style={logoImageStyle} />
       </div>
       <div className="p-6 h-[150px]">
-        <img src={westpacLogo} alt="Logo 2" style={logoImageStyle} />
+        <img src={westpacLogo} alt="westpacLogo" style={logoImageStyle} />
       </div>
       <div className="p-6 h-[150px]">
-        <img src={reaLogo} alt="Logo 3" style={logoImageStyle} />
+        <img src={reaLogo} alt="reaLogo" style={logoImageStyle} />
       </div>
       <div className="p-6 h-[110px]">
-        <img src={apacInsiderLogo} alt="Logo 4" style={logoImageStyle} />
+        <img
+          src={apacInsiderLogo}
+          alt="apacInsiderLogo"
+          style={logoImageStyle}
+        />
       </div>
       <div className="p-6 h-[120px]">
-        <img src={queenCityLawLogo} alt="Logo 5" style={logoImageStyle} />
+        <img
+          src={queenCityLawLogo}
+          alt="queenCityLawLogo"
+          style={logoImageStyle}
+        />
       </div>
       <div className="p-6 h-[150px]">
-        <img src={topReviewsLogo} alt="Logo 6" style={logoImageStyle} />
+        <img src={topReviewsLogo} alt="topReviewsLogo" style={logoImageStyle} />
       </div>
     </section>
   );

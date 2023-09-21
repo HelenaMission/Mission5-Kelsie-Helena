@@ -65,10 +65,8 @@ function readAndConvertFile(file: string) {
   const imagesDir = path.join(__dirname, "..", "images");
   const filePath = path.join(imagesDir, file);
 
-  // Read the image file as binary data
   const imageBuffer = fs.readFileSync(filePath);
 
-  // Convert the binary data to a Buffer
   return {
     type: "Buffer",
     data: [...imageBuffer],

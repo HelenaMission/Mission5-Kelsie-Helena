@@ -32,15 +32,16 @@
 }
 
 .input-range__label {
-  color: #aaaaaa;
+  color: 000000;
   font-family: 'Helvetica Neue', san-serif;
-  font-size: 0.8rem;
+  font-size: 1rem;
   transform: translateZ(0);
   white-space: nowrap;
 }
 
 .input-range__label--min,
 .input-range__label--max {
+  color:#E9EAF0;
   bottom: -2rem;
   position: absolute;
 }
@@ -55,11 +56,11 @@
 
 .input-range__label--value {
   position: absolute;
-  top: -2rem;
+  top: -3rem;
+  left: -1.5rem;
 }
 
 .input-range__label-container {
-  left: -50%;
   position: relative;
 }
 .input-range__label--max .input-range__label-container {
@@ -67,7 +68,7 @@
 }
 
 .input-range__track {
-  background: #eeeeee;
+  background: #C4C4C4;
   border-radius: 0.3rem;
   cursor: pointer;
   display: block;
@@ -92,8 +93,9 @@
 }
 
 .input-range {
+  left: 2.5rem;
   height: 1rem;
   position: relative;
-  width: 80%;
-  margin-left: 1rem;
+  width: 100%;
+  justify-content: center;
 }

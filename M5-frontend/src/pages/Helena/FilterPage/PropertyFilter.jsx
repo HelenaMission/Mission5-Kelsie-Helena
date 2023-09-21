@@ -1,13 +1,12 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import PropertyTypes from '../../../components/helenaComponents/filterPage/components/PropertyTypes.jsx';
 import Location from '../../../components/helenaComponents/filterPage/components/Location.jsx';
 import Bed from '../../../components/helenaComponents/filterPage/components/Bed.jsx';
 import Baths from '../../../components/helenaComponents/filterPage/components/Baths.jsx';
 import Others from '../../../components/helenaComponents/filterPage/components/Others.jsx';
 import Price from '../../../components/helenaComponents/filterPage/components/Price.jsx';
-import axios from 'axios';
 
-export default function PropertyFilter({ filteredProperties }) {
+export default function PropertyFilter({ onReset, handleSubmit }) {
   const [types, setTypes] = useState([]);
   const [bed, setBed] = useState([]);
   const [bath, setBath] = useState([]);
@@ -49,7 +48,7 @@ export default function PropertyFilter({ filteredProperties }) {
     setPriceRange(value);
   };
 
-  const handleReset = () => {
+  const handleResetLocal = () => {
     setTypes([]);
     setBed([]);
     setBath([]);
@@ -57,9 +56,11 @@ export default function PropertyFilter({ filteredProperties }) {
     setPet(false);
     setSuburb('');
     setPriceRange({ min: 100, max: 1000 });
+
+    onReset();
   };
 
-  const handleSubmit = async () => {
+  const handleSubmitLocal = async () => {
     const filter = {
       types,
       bed,
@@ -69,86 +70,34 @@ export default function PropertyFilter({ filteredProperties }) {
       suburb,
       priceRange,
     };
-    console.log(filter);
 
-    try {
-      const response = await axios.post('http://localhost:4000/api/filter', filter, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-
-      if (response.status === 200) {
-        console.log('Matched data:', response.data);
-        filteredProperties(response.data);
-      } else {
-        console.log('Error fetching data:', response.data);
-      }
-    } catch (error) {
-      console.log('Error fetching data:', error);
-    }
+    handleSubmit(filter);
   };
 
   return (
-    <div>
+    <div className='filter-components relative bg-slate-200 top-[60px] h-[630px]'>
       <PropertyTypes onTypeSelect={handleTypeSelect} />
-      <div>Selected Property Types: {types}</div>
-
       <Location onLocationChange={handleLocationChange} />
-      <div>Selected Suburb: {suburb}</div>
-
       <Bed onBedSelect={handleBedSelect} />
-      <div>Selected Bed Types: {bed}</div>
-
-      <Baths onBathSelect={handleBathSelect} />
-      <div>Selected Bath Types: {bath}</div>
-
+      <Baths onBathSelect={handleBathSelect} onReset={handleResetLocal} />
       <Others onImmediate={handleImmediate} onPets={handlePets} />
-      <div>Selected Immediate: {immediate.toString()}</div>
-      <div>Selected Pets: {pet.toString()}</div>
-
       <Price onPriceChange={handlePriceChange} />
-      <div>
-        Selected Price Range: ${priceRange.min} - ${priceRange.max}
-      </div>
-
-      <div className='absolute left-[709px] top-[758px]'>
-        <div className='w-[259px] h-12 px-5 py-3 rounded-[50px] border border-red-600 justify-center items-center gap-2.5 inline-flex'>
-          <button
-            type='button'
-            onClick={handleReset}
-            className="text-red-600 text-base font-semibold font-['Plus Jakarta Sans'] uppercase leading-normal tracking-wide"
-          >
-            RESET
-          </button>
-        </div>
-
-        <div
+      <div className="buttons absolute left-[1070px] top-[560px] font-['Plus Jakarta Sans']">
+        <button
           type='button'
-          onClick={handleSubmit}
-          className='w-[220px] h-12 px-5 py-3 bg-red-600 rounded-[50px] shadow justify-center items-center gap-2.5 inline-flex'
+          onClick={handleResetLocal}
+          className='w-[259px] h-12 mr-5 rounded-[50px] border border-red-600 justify-center items-center inline-flex text-red-600 text-base font-semibold  uppercase leading-normal tracking-wide'
         >
-          <button className="text-white text-base font-bold font-['DM Sans'] leading-normal tracking-wide">
-            SEARCH
-          </button>
-        </div>
+          RESET
+        </button>
+        <button
+          type='button'
+          onClick={handleSubmitLocal}
+          className='w-[220px] h-12 bg-red-600 rounded-[50px] shadow justify-center items-center gap-2.5 inline-flex text-white text-base font-bold leading-normal tracking-wide'
+        >
+          SEARCH
+        </button>
       </div>
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
