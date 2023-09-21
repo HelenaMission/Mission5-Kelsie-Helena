@@ -125,11 +125,11 @@ export default function PropertyList() {
             isFilterVisible ? "h-auto" : ""
           }`}
         >
-          {matchedProperties.length === 0 && initialProperties.length === 0 ? (
+          {isFilterVisible && matchedProperties.length === 0 && initialProperties.length !== 0 ? (
             <div className="no-result text-center">
               <p className="text-rose-600 font-bold text-5xl">
                 {" "}
-                Oops! No properties found
+                No properties found
               </p>
               <p className="text-3xl mt-8">Please search again</p>
             </div>
