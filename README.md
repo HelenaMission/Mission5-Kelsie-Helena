@@ -82,7 +82,7 @@ To use the application, follow these steps:
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/HelenaMission/Mission5-Kelsie-Helena
+   git clone [https://github.com/HelenaMission/Redesigning-Property-App](https://github.com/HelenaMission/Redesigning-Property-App)
    ```
 2. Install NPM packages from both backend and frontend folders
    ```sh
