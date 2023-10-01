@@ -113,7 +113,7 @@ Helena Lee - helena@missionreadyhq.com
 - [![LinkedIn - Kelsie Smith][linkedin-shield]][kelsie-linkedin-url]
   <br></br>
   <br></br>
-  Project Link: [https://github.com/HelenaMission/Mission5-Kelsie-Helena](https://github.com/HelenaMission/Mission5-Kelsie-Helena)
+  Project Link: [https://github.com/HelenaMission/Redesigning-Property-App](https://github.com/HelenaMission/Redesigning-Property-App)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
